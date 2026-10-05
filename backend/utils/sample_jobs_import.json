@@ -1,0 +1,86 @@
+[
+  {
+    "title": "Senior React Frontend Architect",
+    "companyName": "TechCorp Innovations",
+    "companyLogo": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=200&auto=format&fit=crop&q=80",
+    "category": "Frontend Development",
+    "description": "Lead the frontend architecture of our next-generation cloud analytics suite. You will define technical standards, design reusable design systems, and mentor junior engineers.",
+    "responsibilities": [
+      "Architect enterprise web applications using React 19, TypeScript, and micro-frontend patterns.",
+      "Collaborate with UI/UX teams to implement scalable component libraries.",
+      "Optimize web vital metrics to achieve sub-second load times."
+    ],
+    "requirements": [
+      "5+ years of extensive experience in frontend web development.",
+      "Deep expertise in React, TypeScript, Redux Toolkit, and Webpack/Vite.",
+      "Strong understanding of web security, performance profiling, and accessibility (WCAG)."
+    ],
+    "requiredSkills": ["React", "TypeScript", "Redux", "TailwindCSS", "Next.js", "Performance Optimization"],
+    "experience": "4-7 years",
+    "education": "Bachelor's or Master's in Computer Science",
+    "salary": { "min": 2200000, "max": 3500000, "currency": "INR", "display": "₹22 - 35 LPA" },
+    "location": "Bangalore, India",
+    "jobType": "Full-time",
+    "workMode": "Hybrid",
+    "vacancies": 3,
+    "status": "active",
+    "featured": true,
+    "benefits": ["Equity / Stock Options", "Unlimited PTO", "Health & Dental Insurance", "Remote Work Stipend"]
+  },
+  {
+    "title": "Backend Go / Node.js Microservices Engineer",
+    "companyName": "DataFlow Networks",
+    "companyLogo": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=200&auto=format&fit=crop&q=80",
+    "category": "Backend Development",
+    "description": "Build high-throughput distributed message processing services that process over 100,000 requests per second with high reliability.",
+    "responsibilities": [
+      "Design and maintain distributed REST and gRPC microservices.",
+      "Optimize database queries across MongoDB and Redis cache clusters.",
+      "Participate in 24/7 on-call rotation and reliability engineering."
+    ],
+    "requirements": [
+      "Strong background in backend development with Node.js, Express, or Golang.",
+      "Proven experience with event streams (Kafka/RabbitMQ) and distributed caching.",
+      "Knowledge of containerization and Kubernetes orchestration."
+    ],
+    "requiredSkills": ["Node.js", "Golang", "MongoDB", "Redis", "Kafka", "Docker", "Microservices"],
+    "experience": "2-5 years",
+    "education": "B.Tech / B.E. / MCA",
+    "salary": { "min": 1500000, "max": 2500000, "currency": "INR", "display": "₹15 - 25 LPA" },
+    "location": "Hyderabad, India",
+    "jobType": "Full-time",
+    "workMode": "Remote",
+    "vacancies": 2,
+    "status": "active",
+    "featured": false,
+    "benefits": ["Annual Bonus", "Broadband Allowance", "Learning Budget"]
+  },
+  {
+    "title": "Junior QA Automation Engineer (Fresher Welcomed)",
+    "companyName": "QualityFirst Systems",
+    "companyLogo": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=200&auto=format&fit=crop&q=80",
+    "category": "Quality Assurance & Testing",
+    "description": "Passionate freshers or junior testers wanting to build robust test automation suites, Cypress scripts, and end-to-end regression pipelines.",
+    "responsibilities": [
+      "Write automated UI and API test scripts using Cypress and Postman.",
+      "Identify, document, and track software bugs and regressions in Jira.",
+      "Coordinate with software development teams during sprint release cycles."
+    ],
+    "requirements": [
+      "Familiarity with JavaScript or Python programming basics.",
+      "Understanding of Software Testing Life Cycle (STLC) and Test Plans.",
+      "Curious mindset with keen attention to details."
+    ],
+    "requiredSkills": ["JavaScript", "Cypress", "Postman", "Selenium", "Manual Testing", "Git"],
+    "experience": "Fresher (0-1 years)",
+    "education": "Bachelor's Degree in Science or Engineering",
+    "salary": { "min": 400000, "max": 650000, "currency": "INR", "display": "₹4.0 - 6.5 LPA" },
+    "location": "Pune, India",
+    "jobType": "Full-time",
+    "workMode": "On-site",
+    "vacancies": 5,
+    "status": "active",
+    "featured": false,
+    "benefits": ["Health Insurance", "Company Shuttle", "Skill Certification Programs"]
+  }
+]
