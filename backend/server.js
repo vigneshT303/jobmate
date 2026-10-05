@@ -64,6 +64,10 @@ const limiter = rateLimit({
     message: 'Too many requests from this IP, please try again after 15 minutes.'
   }
 });
+
+app.use("/",async (req,res) => {
+  res.json({message:"hello welcome"})
+})
 app.use('/api', limiter);
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
