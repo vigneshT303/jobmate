@@ -40,9 +40,7 @@ const clientUrls = (process.env.CLIENT_URL || "")
   .filter(Boolean);
 
 const defaultAllowedOrigins = [
-  "https://jobmate-frontend.onrender.com",
-  "http://localhost:5173",
-  "http://localhost:3000"
+  "https://jobmate-frontend.onrender.com"
 ];
 
 const allowedOrigins = Array.from(new Set([...defaultAllowedOrigins, ...clientUrls]));
