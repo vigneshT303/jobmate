@@ -1,12 +1,26 @@
-const mongoose = require('mongoose');
+
+const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/jobmate');
-    console.log(`[Database] MongoDB Connected: ${conn.connection.host}/${conn.connection.name}`);
+    const mongoURI = process.env.MONGO_URI;
+
+    if (!mongoURI) {
+      throw new Error("MONGO_URI is missing in environment variables");
+    }
+
+    const conn = await mongoose.connect(mongoURI, {
+      serverSelectionTimeoutMS: 10000
+    });
+
+    console.log(
+      `[Database] MongoDB Connected: ${conn.connection.host}/${conn.connection.name}`
+    );
+
+    return conn;
   } catch (error) {
-    console.error(`[Database Error] ${error.message}`);
-    console.error('[Database Error] Action required: Ensure MongoDB Atlas IP Whitelist includes 0.0.0.0/0 (Network Access) and MONGO_URI is set correctly in environment variables.');
+    console.error("[Database Error]", error.message);
+    throw error;
   }
 };
 
