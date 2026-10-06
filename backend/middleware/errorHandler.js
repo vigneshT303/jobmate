@@ -34,6 +34,10 @@ const errorHandler = (err, req, res, next) => {
     return errorResponse(res, 401, 'Authentication token has expired');
   }
 
+  if (err.message && err.message.startsWith('Not allowed by CORS')) {
+    return errorResponse(res, 403, err.message);
+  }
+
   const statusCode = res.statusCode && res.statusCode !== 200 ? res.statusCode : 500;
   return errorResponse(res, statusCode, err.message || 'Internal Server Error');
 };

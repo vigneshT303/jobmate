@@ -7,6 +7,7 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
+const mongoose = require("mongoose");
 const connectDB = require("./config/db");
 const errorHandler = require("./middleware/errorHandler");
 
@@ -33,19 +34,33 @@ app.use(
 );
 
 // CORS
-const allowedOrigins = [
+const clientUrls = (process.env.CLIENT_URL || "")
+  .split(",")
+  .map((url) => url.trim().replace(/\/$/, ""))
+  .filter(Boolean);
+
+const defaultAllowedOrigins = [
   "https://jobmate-frontend.onrender.com",
   "http://localhost:5173",
   "http://localhost:3000"
 ];
 
+const allowedOrigins = Array.from(new Set([...defaultAllowedOrigins, ...clientUrls]));
+
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
+      if (!origin) return callback(null, true);
+
+      const isAllowed =
+        allowedOrigins.includes(origin) ||
+        origin.endsWith(".onrender.com") ||
+        origin.endsWith(".vercel.app");
+
+      if (isAllowed) {
         callback(null, true);
       } else {
-        callback(new Error("Not allowed by CORS"));
+        callback(new Error(`Not allowed by CORS for origin: ${origin}`));
       }
     },
     credentials: true,
@@ -92,9 +107,11 @@ app.use(
 
 // Health check
 app.get("/api/health", (req, res) => {
-  res.status(200).json({
-    success: true,
-    message: "JobMate API is healthy and operational",
+  const isDbConnected = mongoose.connection.readyState === 1;
+  res.status(isDbConnected ? 200 : 503).json({
+    success: isDbConnected,
+    message: isDbConnected ? "JobMate API is healthy and operational" : "Database is not connected",
+    database: isDbConnected ? "connected" : "disconnected",
     timestamp: new Date().toISOString()
   });
 });
